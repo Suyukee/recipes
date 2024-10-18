@@ -9,8 +9,8 @@ type Props = {
 };
 
 function RecipeItem({ name, imgUrl, rating }: Props) {
-	if (name.length > 25) {
-		name = name.slice(0, 25) + '…';
+	if (name.length > 30) {
+		name = name.slice(0, 30) + '…';
 	}
 
 	return (

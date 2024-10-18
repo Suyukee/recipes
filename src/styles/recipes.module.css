@@ -15,18 +15,20 @@
 	border-radius: 20px;
 }
 
-.description {
-	padding: 15px 15px 5px;
-	text-wrap: nowrap;
-}
-
 .item img {
 	border-radius: 18px 18px 0 0;
 }
 
+.description {
+	padding: 15px 15px 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
 .title {
 	font-size: 16px;
-	font-weight: 900;
+	font-weight: 700;
 }
 
 .rating {
@@ -45,8 +47,18 @@
 		width: 100%;
 		height: auto;
 	}
+	.description {
+		padding: 10px 5px 5px;
+	}
 	.title {
 		font-size: 14px;
 		font-weight: 400;
+	}
+	.rating {
+		gap: 3px;
+		font-size: 12px;
+	}
+	.rating svg {
+		width: 12px;
 	}
 }
