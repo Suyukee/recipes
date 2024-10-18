@@ -48,14 +48,15 @@
 		height: auto;
 	}
 	.description {
-		padding: 10px 5px 5px;
+		padding: 8px 8px 8px;
+		gap: 3px;
 	}
 	.title {
 		font-size: 14px;
 		font-weight: 400;
 	}
 	.rating {
-		gap: 3px;
+		gap: 4px;
 		font-size: 12px;
 	}
 	.rating svg {
