@@ -8,7 +8,7 @@ function Header() {
 				<PizzaIcon /> Recipes
 			</h1>
 			<div className={header.search}>
-				<input type="text" className={header.input} placeholder="typing..." />
+				<input type="text" className={header.input} placeholder="Start typing to search…" />
 				<button className={header.btn}>Search</button>
 			</div>
 		</header>

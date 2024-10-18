@@ -17,12 +17,40 @@
 	border-radius: 20px;
 }
 
+.description {
+	padding: 0 15px;
+	text-wrap: nowrap;
+}
+
 .item img {
 	border-radius: 18px 18px 0 0;
 }
 
 .title {
-	padding: 0 15px;
 	font-size: 16px;
 	font-weight: 900;
+}
+
+.rating {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	font-size: 14px;
+}
+
+@media (max-width: 700px) {
+	.list {
+		grid-template-columns: repeat(auto-fill, 164px);
+	}
+	.item {
+		height: 205px;
+	}
+	.item img {
+		width: 160px;
+		height: 160px;
+	}
+	.title {
+		font-size: 14px;
+		font-weight: 400;
+	}
 }

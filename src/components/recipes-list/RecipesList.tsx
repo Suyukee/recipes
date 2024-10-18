@@ -21,24 +21,21 @@ interface Recipes {
 	name: string;
 	image: string;
 	rating: number;
-	tags: string[];
 }
 
-const getRecipes = async () => {
-	const response = await fetch(
-		'https://dummyjson.com/recipes?limit=10&select=name,image,tags,rating',
-	);
-	console.log(response);
-	return response.json();
-};
-
 async function RecipesList() {
-	const { recipes }: Data = await getRecipes();
-	console.log(recipes);
+	const response = await fetch('https://dummyjson.com/recipes?limit=30&select=name,image,rating');
+	const { recipes }: Data = await response.json();
+
 	return (
 		<main className={styles.list}>
 			{recipes.map((recipe) => (
-				<RecipeItem key={recipe.id} name={recipe.name} imgUrl={recipe.image} />
+				<RecipeItem
+					key={recipe.id}
+					name={recipe.name}
+					imgUrl={recipe.image}
+					rating={recipe.rating}
+				/>
 			))}
 		</main>
 	);

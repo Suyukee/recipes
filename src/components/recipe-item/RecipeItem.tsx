@@ -1,16 +1,28 @@
+import StarIcon from '@/icon/StarIcon';
 import styles from '@/styles/recipes.module.css';
 import Image from 'next/image';
 
 type Props = {
 	name: string;
 	imgUrl: string;
+	rating: number;
 };
 
-function RecipeItem({ name, imgUrl }: Props) {
+function RecipeItem({ name, imgUrl, rating }: Props) {
+	if (name.length > 25) {
+		name = name.slice(0, 25) + '…';
+	}
+
 	return (
 		<div className={styles.item}>
 			<Image src={imgUrl} alt={name} width={260} height={260} />
-			<h3 className={styles.title}>{name}</h3>
+			<div className={styles.description}>
+				<h3 className={styles.title}>{name}</h3>
+				<span className={styles.rating}>
+					<StarIcon />
+					{rating}
+				</span>
+			</div>
 		</div>
 	);
 }
