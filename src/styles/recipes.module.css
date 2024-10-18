@@ -8,17 +8,15 @@
 }
 
 .item {
-	height: 330px;
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
 	background: var(--black);
 	border: 2px solid var(--black);
 	border-radius: 20px;
 }
 
 .description {
-	padding: 0 15px;
+	padding: 15px 15px 5px;
 	text-wrap: nowrap;
 }
 
@@ -40,15 +38,12 @@
 
 @media (max-width: 700px) {
 	.list {
-		grid-template-columns: repeat(auto-fill, 184px);
+		grid-template-columns: 1fr 1fr;
 		gap: 5px;
 	}
-	.item {
-		height: 245px;
-	}
 	.item img {
-		width: 180px;
-		height: 180px;
+		width: 100%;
+		height: auto;
 	}
 	.title {
 		font-size: 14px;
