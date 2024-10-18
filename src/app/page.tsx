@@ -1,11 +1,11 @@
+import Header from '@/components/header';
+import RecipesList from '@/components/recipes-list';
+
 export default function Home() {
 	return (
-		<div>
-			<main>
-				<div className="box">
-					<h3>Привет, Настя, я тебя люблю</h3>
-				</div>
-			</main>
+		<div className="main">
+			<Header />
+			<RecipesList />
 		</div>
 	);
 }

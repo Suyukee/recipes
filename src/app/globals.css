@@ -30,13 +30,7 @@ a {
 	text-decoration: none;
 }
 
-.box {
-	margin: 50px;
-	padding: 20px;
-
-	background: var(--whiteElement);
-	border: 2px solid var(--blackElement);
-	border-radius: 20px;
-
-	text-align: center;
+.main {
+	max-width: 1000px;
+	margin: 0 auto;
 }

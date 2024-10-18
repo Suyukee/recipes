@@ -1,0 +1,41 @@
+.header {
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 15px;
+}
+
+.title {
+	color: #ffc567;
+	-webkit-text-stroke: 2px var(--blackElement);
+	paint-order: stroke fill;
+	text-shadow: 3px 3px var(--blackElement);
+}
+
+.input {
+	padding: 0 15px;
+	height: 50px;
+	flex-grow: 1;
+
+	color: var(--blackElement);
+	border: 2px solid var(--blackElement);
+	border-radius: 20px;
+	font-size: 14px;
+	outline: none;
+}
+
+.btn {
+	width: 100px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+	background: var(--purpleElement);
+	color: var(--blackElement);
+	border: 2px solid var(--blackElement);
+	border-radius: 20px;
+	box-shadow: 3px 3px var(--blackElement);
+}
