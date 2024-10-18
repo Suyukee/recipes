@@ -1,4 +1,28 @@
 .list {
 	padding: 20px 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 264px);
+	justify-content: center;
+	gap: 10px;
 	color: var(--white);
+}
+
+.item {
+	height: 330px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	background: var(--black);
+	border: 2px solid var(--black);
+	border-radius: 20px;
+}
+
+.item img {
+	border-radius: 18px 18px 0 0;
+}
+
+.title {
+	padding: 0 15px;
+	font-size: 16px;
+	font-weight: 900;
 }

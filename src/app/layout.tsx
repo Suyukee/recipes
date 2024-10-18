@@ -3,7 +3,6 @@ import { Open_Sans } from 'next/font/google';
 import './globals.css';
 
 const openSans = Open_Sans({
-	weight: ['400', '500', '700', '800'],
 	subsets: ['latin'],
 	display: 'swap',
 });
