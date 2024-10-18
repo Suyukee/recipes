@@ -2,7 +2,9 @@ export default function Home() {
 	return (
 		<div>
 			<main>
-				<h3>Recipes</h3>
+				<div className="box">
+					<h3>Привет, Настя, я тебя люблю</h3>
+				</div>
 			</main>
 		</div>
 	);
