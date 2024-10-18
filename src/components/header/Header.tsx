@@ -1,15 +1,16 @@
-import SearchIcon from '@/icon/SearchIcon';
+import PizzaIcon from '@/icon/PizzaIcon';
 import header from '@/styles/header.module.css';
 
 function Header() {
 	return (
 		<header className={header.header}>
-			<h1 className={header.title}>Recipes</h1>
-			<input type="text" className={header.input} placeholder="typing..." />
-			<button className={header.btn}>
-				<SearchIcon />
-				Search
-			</button>
+			<h1 className={header.title}>
+				<PizzaIcon /> Recipes
+			</h1>
+			<div className={header.search}>
+				<input type="text" className={header.input} placeholder="typing..." />
+				<button className={header.btn}>Search</button>
+			</div>
 		</header>
 	);
 }
