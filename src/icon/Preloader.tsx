@@ -9,20 +9,20 @@ function Preloader() {
 				fy=".3125"
 				gradientTransform="scale(1.5)"
 			>
-				<stop offset="0" stop-color="#689BF7"></stop>
-				<stop offset=".3" stop-color="#689BF7" stop-opacity=".9"></stop>
-				<stop offset=".6" stop-color="#689BF7" stop-opacity=".6"></stop>
-				<stop offset=".8" stop-color="#689BF7" stop-opacity=".3"></stop>
-				<stop offset="1" stop-color="#689BF7" stop-opacity="0"></stop>
+				<stop offset="0" stopColor="#689BF7"></stop>
+				<stop offset=".3" stopColor="#689BF7" stopOpacity=".9"></stop>
+				<stop offset=".6" stopColor="#689BF7" stopOpacity=".6"></stop>
+				<stop offset=".8" stopColor="#689BF7" stopOpacity=".3"></stop>
+				<stop offset="1" stopColor="#689BF7" stopOpacity="0"></stop>
 			</radialGradient>
 			<circle
-				transform-origin="center"
+				transformOrigin="center"
 				fill="none"
 				stroke="url(#a1)"
-				stroke-width="20"
-				stroke-linecap="round"
-				stroke-dasharray="200 1000"
-				stroke-dashoffset="0"
+				strokeWidth="20"
+				strokeLinecap="round"
+				strokeDasharray="200 1000"
+				strokeDashoffset="0"
 				cx="100"
 				cy="100"
 				r="70"
@@ -39,12 +39,12 @@ function Preloader() {
 				></animateTransform>
 			</circle>
 			<circle
-				transform-origin="center"
+				transformOrigin="center"
 				fill="none"
 				opacity=".2"
 				stroke="#689BF7"
-				stroke-width="20"
-				stroke-linecap="round"
+				strokeWidth="20"
+				strokeLinecap="round"
 				cx="100"
 				cy="100"
 				r="70"
