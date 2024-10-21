@@ -32,9 +32,9 @@ a {
 	text-decoration: none;
 }
 
-.main {
+.app {
 	max-width: 1400px;
-	margin: 0 auto;
+	margin: 25px auto;
 	padding: 0 10px;
 }
 
