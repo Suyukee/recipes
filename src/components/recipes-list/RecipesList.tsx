@@ -2,7 +2,7 @@
 
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { getRecipe } from '@/app/page';
+import { getRecipe } from '@/utils/getRecipe';
 import RecipeItem from '@/components/recipe-item';
 import styles from '@/styles/recipes.module.css';
 import { Recipes } from '@/types/recipes';
