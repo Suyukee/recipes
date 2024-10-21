@@ -16,7 +16,7 @@ function Preloader() {
 				<stop offset="1" stopColor="#689BF7" stopOpacity="0"></stop>
 			</radialGradient>
 			<circle
-				transformOrigin="center"
+				transform-origin="center"
 				fill="none"
 				stroke="url(#a1)"
 				strokeWidth="20"
@@ -39,7 +39,7 @@ function Preloader() {
 				></animateTransform>
 			</circle>
 			<circle
-				transformOrigin="center"
+				transform-origin="center"
 				fill="none"
 				opacity=".2"
 				stroke="#689BF7"
