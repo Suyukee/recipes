@@ -2,21 +2,23 @@ import ClockIcon from '@/icon/ClockIcon';
 import StarIcon from '@/icon/StarIcon';
 import styles from '@/styles/recipes.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Props = {
+	id: string;
 	name: string;
 	imgUrl: string;
 	rating: number;
 	time: number;
 };
 
-function RecipeItem({ name, imgUrl, rating, time }: Props) {
+function RecipeItem({ id, name, imgUrl, rating, time }: Props) {
 	if (name.length > 30) {
 		name = name.slice(0, 30) + '…';
 	}
 
 	return (
-		<div className={styles.item}>
+		<Link href={`recipe/${id}`} className={styles.item}>
 			<Image src={imgUrl} alt={name} width={260} height={260} priority={true} />
 
 			<div className={styles.description}>
@@ -34,7 +36,7 @@ function RecipeItem({ name, imgUrl, rating, time }: Props) {
 					</span>
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 }
 export default RecipeItem;

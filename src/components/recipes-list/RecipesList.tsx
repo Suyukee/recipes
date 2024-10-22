@@ -2,7 +2,7 @@
 
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { getRecipe } from '@/utils/getRecipe';
+import { getRecipes } from '@/utils/getRecipe';
 import RecipeItem from '@/components/recipe-item';
 import styles from '@/styles/recipes.module.css';
 import { Recipes } from '@/types/recipes';
@@ -17,7 +17,7 @@ interface Props {
 export default function RecipesList({ limit, setLimit, search }: Props) {
 	const { data, error, isPending } = useQuery({
 		queryKey: ['recipes', limit, search],
-		queryFn: () => getRecipe(limit, search),
+		queryFn: () => getRecipes({ limit, search }),
 	});
 
 	const [recipes, setRecipes] = useState<Recipes[]>();
@@ -30,13 +30,12 @@ export default function RecipesList({ limit, setLimit, search }: Props) {
 
 	return (
 		<main className={styles.main}>
-			{error && <h2>{error.message}</h2>}
-
 			<div className={styles.list}>
 				{recipes &&
 					recipes.map((recipe) => (
 						<RecipeItem
 							key={recipe.id}
+							id={recipe.id}
 							name={recipe.name}
 							imgUrl={recipe.image}
 							rating={recipe.rating}
@@ -44,6 +43,8 @@ export default function RecipesList({ limit, setLimit, search }: Props) {
 						/>
 					))}
 			</div>
+
+			{error && <p>{error.message}</p>}
 
 			{isPending && <Preloader />}
 
