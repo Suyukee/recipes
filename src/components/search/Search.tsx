@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, MouseEvent, SetStateAction, useRef } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import CrossIcon from '@/icon/CrossIcon';
 import styles from '@/styles/search.module.css';
 
@@ -8,15 +8,11 @@ interface Props {
 }
 
 export default function Search({ search, setSearch }: Props) {
-	const ref = useRef(null);
+	const handleChange = (target: HTMLInputElement) => setSearch(target.value);
 
-	const handleClear = (e: MouseEvent<HTMLButtonElement>) => {
-		const resetForm = e.target as HTMLFormElement;
-		resetForm.reset();
+	const handleClear = () => {
 		setSearch('');
 	};
-
-	const handleChange = (e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value);
 
 	return (
 		<form role="search" className={styles.search}>
@@ -24,11 +20,11 @@ export default function Search({ search, setSearch }: Props) {
 				type="text"
 				className={styles.input}
 				placeholder="Start typing to search…"
-				ref={ref}
-				onChange={(e) => handleChange(e)}
+				value={search}
+				onChange={(e) => handleChange(e.target)}
 			/>
 			{search && (
-				<button className={styles.btnClear} onClick={(e) => handleClear(e)}>
+				<button className={styles.btnClear} onClick={handleClear}>
 					<CrossIcon />
 				</button>
 			)}
