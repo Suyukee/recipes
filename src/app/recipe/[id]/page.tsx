@@ -29,7 +29,7 @@ export default function RecipePage() {
 				{data && (
 					<>
 						<div className={styles.card}>
-							<Image src={data.image} alt={data.name} width={250} height={250} priority={true} />
+							<Image src={data.image} alt={data.name} width={300} height={300} priority={true} />
 
 							<div className={styles.info}>
 								<div className={styles.description}>
