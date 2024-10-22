@@ -1,6 +1,6 @@
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import { getRecipes } from '@/utils/fetching';
-import Main from '@/components/main';
+import MainPage from '@/components/main-page';
 
 export default async function Home() {
 	const queryClient = new QueryClient();
@@ -11,7 +11,7 @@ export default async function Home() {
 
 	return (
 		<HydrationBoundary state={dehydrate(queryClient)}>
-			<Main />
+			<MainPage />
 		</HydrationBoundary>
 	);
 }

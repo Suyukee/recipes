@@ -1,25 +1,21 @@
 'use client';
 
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import { getRecipes } from '@/utils/fetching';
 import RecipeItem from '@/components/recipe-item';
+import { DataDto, RecipesDto } from '@/types/recipes';
 import styles from '@/styles/recipes.module.css';
-import { RecipesDto } from '@/types/recipes';
 import Preloader from '@/icon/Preloader';
 
 interface Props {
+	data: DataDto | undefined;
+	error: Error | null;
+	isPending: boolean;
 	limit: number;
 	setLimit: Dispatch<SetStateAction<number>>;
 	search: string;
 }
 
-export default function RecipesList({ limit, setLimit, search }: Props) {
-	const { data, error, isPending } = useQuery({
-		queryKey: ['recipes', limit, search],
-		queryFn: () => getRecipes({ limit, search }),
-	});
-
+export default function RecipesList({ data, error, isPending, limit, setLimit, search }: Props) {
 	const [recipes, setRecipes] = useState<RecipesDto[]>();
 
 	useEffect(() => {
