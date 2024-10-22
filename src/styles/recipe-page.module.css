@@ -5,13 +5,20 @@
 	gap: 20px;
 }
 
-.info {
+.card {
 	display: flex;
 	gap: 30px;
 }
 
-.info img {
+.card img {
 	border-radius: 20px;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: start;
 }
 
 .description {
@@ -29,6 +36,18 @@
 
 .span {
 	color: var(--blue);
+}
+
+.rating {
+	margin-top: 10px;
+	padding: 5px 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background: var(--black);
+	border-radius: 10px;
+	font-size: 20px;
+	font-weight: 700;
 }
 
 .list {

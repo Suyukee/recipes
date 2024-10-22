@@ -28,29 +28,35 @@ export default function RecipePage() {
 
 				{data && (
 					<>
-						<div className={styles.info}>
+						<div className={styles.card}>
 							<Image src={data.image} alt={data.name} width={250} height={250} priority={true} />
 
-							<div className={styles.description}>
-								<h3 className={styles.title}>{data.name}</h3>
-								<p>
-									Calories per serving:{' '}
-									<span className={styles.span}>{data.caloriesPerServing} kcal</span>
-								</p>
-								<p>
-									Servings: <span className={styles.span}>{data.servings} person</span>
-								</p>
-								<p>
-									Difficulty: <span className={styles.span}>{data.difficulty}</span>
-								</p>
-								<p>
-									Prep time minutes: <span className={styles.span}>{data.prepTimeMinutes} min</span>
-								</p>
-								<p>
-									Cook time minutes: <span className={styles.span}>{data.cookTimeMinutes} min</span>
-								</p>
-								<p>
-									<StarIcon /> {data.rating}
+							<div className={styles.info}>
+								<div className={styles.description}>
+									<h3 className={styles.title}>{data.name}</h3>
+
+									<p>
+										Calories per serving:{' '}
+										<span className={styles.span}>{data.caloriesPerServing} kcal</span>
+									</p>
+									<p>
+										Servings: <span className={styles.span}>{data.servings} person</span>
+									</p>
+									<p>
+										Difficulty: <span className={styles.span}>{data.difficulty}</span>
+									</p>
+									<p>
+										Prep time minutes:{' '}
+										<span className={styles.span}>{data.prepTimeMinutes} min</span>
+									</p>
+									<p>
+										Cook time minutes:{' '}
+										<span className={styles.span}>{data.cookTimeMinutes} min</span>
+									</p>
+								</div>
+								<p className={styles.rating}>
+									<StarIcon size={20} />
+									{data.rating}
 								</p>
 							</div>
 						</div>

@@ -26,7 +26,7 @@ function RecipeItem({ id, name, imgUrl, rating, time }: Props) {
 
 				<div className={styles.info}>
 					<span className={styles.rating}>
-						<StarIcon />
+						<StarIcon size={14} />
 						{rating}
 					</span>
 
