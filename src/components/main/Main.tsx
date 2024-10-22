@@ -12,7 +12,7 @@ export default function Main() {
 	return (
 		<div className="app">
 			<Header />
-			<Search setSearch={setSearch} />
+			<Search search={search} setSearch={setSearch} />
 			<RecipesList limit={limit} setLimit={setLimit} search={search} />
 		</div>
 	);
