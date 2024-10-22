@@ -1,4 +1,4 @@
-export interface Recipes {
+export interface RecipesDto {
 	id: string;
 	name: string;
 	image: string;
@@ -8,12 +8,15 @@ export interface Recipes {
 	ingredients?: string[];
 	instructions?: string[];
 	servings?: number;
-	difficulty?: string;
+	difficulty?: 'Easy' | 'Medium' | 'Hard';
+	cuisine?: string;
 	caloriesPerServing?: number;
+	tags?: string[];
+	mealType?: string;
 }
 
-export interface Data {
-	recipes: Recipes[];
+export interface DataDto {
+	recipes: RecipesDto[];
 	total: number;
 	skip: number;
 	limit: number;

@@ -2,10 +2,10 @@
 
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { getRecipes } from '@/utils/getRecipe';
+import { getRecipes } from '@/utils/fetching';
 import RecipeItem from '@/components/recipe-item';
 import styles from '@/styles/recipes.module.css';
-import { Recipes } from '@/types/recipes';
+import { RecipesDto } from '@/types/recipes';
 import Preloader from '@/icon/Preloader';
 
 interface Props {
@@ -20,7 +20,7 @@ export default function RecipesList({ limit, setLimit, search }: Props) {
 		queryFn: () => getRecipes({ limit, search }),
 	});
 
-	const [recipes, setRecipes] = useState<Recipes[]>();
+	const [recipes, setRecipes] = useState<RecipesDto[]>();
 
 	useEffect(() => {
 		if (data) {

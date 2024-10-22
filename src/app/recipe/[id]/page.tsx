@@ -1,27 +1,35 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { useQuery } from '@tanstack/react-query';
-import { getRecipePage } from '@/utils/getRecipe';
+import { getRecipePage } from '@/utils/fetching';
 import Header from '@/components/header';
 import Preloader from '@/icon/Preloader';
-import styles from '@/styles/recipe-page.module.css';
-import Image from 'next/image';
-import { Recipes } from '@/types/recipes';
 import StarIcon from '@/icon/StarIcon';
+import { RecipesDto } from '@/types/recipes';
+import styles from '@/styles/recipe-page.module.css';
+import BackArrowIcon from '@/icon/BackArrowIcon';
 
 export default function RecipePage() {
+	const router = useRouter();
+
 	const searchParams = usePathname();
 	const id = searchParams.split('/').pop();
 
-	const { data, error, isPending } = useQuery<Recipes>({
+	const { data, error, isPending } = useQuery<RecipesDto>({
 		queryKey: ['recipePage', id],
 		queryFn: () => getRecipePage(id),
 	});
 
 	return (
 		<div className="app">
+			<button className={styles.btnBack} onClick={router.back}>
+				<BackArrowIcon />
+			</button>
+
 			<Header />
+
 			<div className={styles.main}>
 				{error && <p>{error.message}</p>}
 				{isPending && <Preloader />}
@@ -37,23 +45,38 @@ export default function RecipePage() {
 
 									<p>
 										Calories per serving:{' '}
-										<span className={styles.span}>{data.caloriesPerServing} kcal</span>
+										<span className={styles.purpleText}>{data.caloriesPerServing} kcal</span>
 									</p>
 									<p>
-										Servings: <span className={styles.span}>{data.servings} person</span>
+										Servings: <span className={styles.purpleText}>{data.servings} person</span>
 									</p>
 									<p>
-										Difficulty: <span className={styles.span}>{data.difficulty}</span>
+										Difficulty: <span className={styles.purpleText}>{data.difficulty}</span>
 									</p>
 									<p>
 										Prep time minutes:{' '}
-										<span className={styles.span}>{data.prepTimeMinutes} min</span>
+										<span className={styles.purpleText}>{data.prepTimeMinutes} min</span>
 									</p>
 									<p>
 										Cook time minutes:{' '}
-										<span className={styles.span}>{data.cookTimeMinutes} min</span>
+										<span className={styles.purpleText}>{data.cookTimeMinutes} min</span>
+									</p>
+									<p>
+										Cuisine: <span className={styles.purpleText}>{data.cuisine}</span>
+									</p>
+									<p>
+										Meal type: <span className={styles.purpleText}>{data.mealType}</span>
+									</p>
+
+									<p>
+										{data.tags?.map((tag, i) => (
+											<span key={i} className={styles.hashtag}>
+												{`#${tag.replace(/\s/g, '')} `}
+											</span>
+										))}
 									</p>
 								</div>
+
 								<p className={styles.rating}>
 									<StarIcon size={20} />
 									{data.rating}
