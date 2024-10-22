@@ -17,7 +17,7 @@ function RecipeItem({ name, imgUrl, rating, time }: Props) {
 
 	return (
 		<div className={styles.item}>
-			<Image src={imgUrl} alt={name} width={260} height={260} />
+			<Image src={imgUrl} alt={name} width={260} height={260} priority={true} />
 
 			<div className={styles.description}>
 				<h3 className={styles.title}>{name}</h3>

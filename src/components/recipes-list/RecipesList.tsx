@@ -11,12 +11,13 @@ import Preloader from '@/icon/Preloader';
 interface Props {
 	limit: number;
 	setLimit: Dispatch<SetStateAction<number>>;
+	search: string;
 }
 
-export default function RecipesList({ limit, setLimit }: Props) {
+export default function RecipesList({ limit, setLimit, search }: Props) {
 	const { data, error, isPending } = useQuery({
-		queryKey: ['recipes', limit],
-		queryFn: () => getRecipe(limit),
+		queryKey: ['recipes', limit, search],
+		queryFn: () => getRecipe(limit, search),
 	});
 
 	const [recipes, setRecipes] = useState<Recipes[]>();
@@ -25,7 +26,7 @@ export default function RecipesList({ limit, setLimit }: Props) {
 		if (data) {
 			setRecipes(data.recipes);
 		}
-	}, [data]);
+	}, [data, search]);
 
 	return (
 		<main className={styles.main}>
@@ -46,7 +47,7 @@ export default function RecipesList({ limit, setLimit }: Props) {
 
 			{isPending && <Preloader />}
 
-			{!isPending && limit < 50 && (
+			{!isPending && data && data.limit < data.total && (
 				<button className={styles.showMoreBtn} onClick={() => setLimit(limit + 20)}>
 					Show more
 				</button>

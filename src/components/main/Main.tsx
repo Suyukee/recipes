@@ -10,8 +10,8 @@ export default function Main() {
 
 	return (
 		<div className="app">
-			<Header search={search} setSearch={setSearch} />
-			<RecipesList limit={limit} setLimit={setLimit} />
+			<Header setSearch={setSearch} />
+			<RecipesList limit={limit} setLimit={setLimit} search={search} />
 		</div>
 	);
 }

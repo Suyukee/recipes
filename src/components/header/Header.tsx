@@ -2,17 +2,9 @@ import { Dispatch, SetStateAction } from 'react';
 import PizzaIcon from '@/icon/PizzaIcon';
 import header from '@/styles/header.module.css';
 
-interface Props {
-	search: string;
-	setSearch: Dispatch<SetStateAction<string>>;
-}
-
-export default function Header({ search, setSearch }: Props) {
+export default function Header({ setSearch }: { setSearch: Dispatch<SetStateAction<string>> }) {
 	return (
 		<header className={header.header}>
-			{/* TODO: Это естественно нужно переделать */}
-			<p style={{ position: 'absolute', top: '5px', color: '#fff' }}>{search}</p>
-
 			<h1 className={header.title}>
 				<PizzaIcon /> Recipes
 			</h1>
@@ -24,7 +16,7 @@ export default function Header({ search, setSearch }: Props) {
 					placeholder="Start typing to search…"
 					onChange={(e) => setSearch(e.target.value)}
 				/>
-				<button className={header.btn}>Search</button>
+				{/* <button className={header.btn}>Search</button> */}
 			</div>
 		</header>
 	);
