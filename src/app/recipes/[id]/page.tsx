@@ -9,7 +9,8 @@ import Preloader from '@/icon/Preloader';
 import StarIcon from '@/icon/StarIcon';
 import { RecipesDto } from '@/types/recipes';
 import styles from '@/styles/recipe-page.module.css';
-import BackArrowIcon from '@/icon/BackArrowIcon';
+import Link from 'next/link';
+import BackButton from '@/components/back-button/BackButton';
 
 export default function RecipePage() {
 	const router = useRouter();
@@ -24,9 +25,7 @@ export default function RecipePage() {
 
 	return (
 		<div className="app">
-			<button className={styles.btnBack} onClick={router.back}>
-				<BackArrowIcon />
-			</button>
+			<BackButton router={router} />
 
 			<Header />
 
@@ -70,9 +69,13 @@ export default function RecipePage() {
 
 									<p>
 										{data.tags?.map((tag, i) => (
-											<span key={i} className={styles.hashtag}>
-												{`#${tag.replace(/\s/g, '')} `}
-											</span>
+											<>
+												<span key={i} className={styles.hashtag}>
+													<Link href={`/recipes/tag/${tag}`}>{`#${tag
+														.replace(/\-/g, '')
+														.replace(/\s/g, '_')} `}</Link>
+												</span>
+											</>
 										))}
 									</p>
 								</div>

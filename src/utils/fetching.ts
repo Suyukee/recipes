@@ -13,3 +13,9 @@ export async function getRecipePage(id = '') {
 	const data = await res.json();
 	return data;
 }
+
+export async function getRecipesTag( tag = '' ) {
+	const res = await fetch(`https://dummyjson.com/recipes/tag/${tag}`);
+	const data = await res.json();
+	return data;
+}

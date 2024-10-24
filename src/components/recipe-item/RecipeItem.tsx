@@ -18,7 +18,7 @@ function RecipeItem({ id, name, imgUrl, rating, time }: Props) {
 	}
 
 	return (
-		<Link href={`recipes/${id}`} className={styles.item}>
+		<Link href={`/recipes/${id}`} className={styles.item}>
 			<Image src={imgUrl} alt={name} width={260} height={260} priority={true} />
 
 			<div className={styles.description}>
