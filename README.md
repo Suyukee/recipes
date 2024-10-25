@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## О приложении
 
-## Getting Started
+Веб-приложение представляет собой сайт рецептов с полным их описанием
+Присутсвует возможность поиска по названию и тэгам
+Также список рецептов подгружается не весь разом, а порционно
 
-First, run the development server:
+## Реализация
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Приложение создано с использованием React, Typescript, NextJS, React Query
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Сайт адаптирован под все устройства
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Деплой на Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Приложение можно посмотреть по ссылке:
+https://recipes-five-brown.vercel.app/
 
-## Learn More
+## Примеры
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![изображение](https://github.com/user-attachments/assets/3c9eee60-4624-440a-9369-413cf65fa487)
+![изображение](https://github.com/user-attachments/assets/13ce0e53-dc80-467b-979c-e51dfebb0211)
+![изображение](https://github.com/user-attachments/assets/0364aa59-9276-4cb5-9b0b-31ed373b0993)
+![изображение](https://github.com/user-attachments/assets/424ff522-9d10-4e68-a568-f9d0d94fc012)
