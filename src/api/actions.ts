@@ -1,3 +1,5 @@
+'use server';
+
 import { DataDto } from '@/types/recipes';
 
 export async function getRecipes({ limit = 20, search = '' }) {
@@ -14,7 +16,7 @@ export async function getRecipePage(id = '') {
 	return data;
 }
 
-export async function getRecipesTag( tag = '' ) {
+export async function getRecipesTag(tag = '') {
 	const res = await fetch(`https://dummyjson.com/recipes/tag/${tag}`);
 	const data = await res.json();
 	return data;

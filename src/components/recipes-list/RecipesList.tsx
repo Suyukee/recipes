@@ -9,13 +9,13 @@ import Preloader from '@/icon/Preloader';
 interface Props {
 	data: DataDto | undefined;
 	error: Error | null;
-	isPending: boolean;
+	isLoading: boolean;
 	limit: number;
 	setLimit: Dispatch<SetStateAction<number>>;
 	search: string;
 }
 
-export default function RecipesList({ data, error, isPending, limit, setLimit, search }: Props) {
+export default function RecipesList({ data, error, isLoading, limit, setLimit, search }: Props) {
 	const [recipes, setRecipes] = useState<RecipesDto[]>();
 
 	useEffect(() => {
@@ -42,9 +42,9 @@ export default function RecipesList({ data, error, isPending, limit, setLimit, s
 
 			{error && <p>{error.message}</p>}
 
-			{isPending && <Preloader />}
+			{isLoading && <Preloader />}
 
-			{!isPending && data && data.limit < data.total && (
+			{!isLoading && data && data.limit < data.total && (
 				<button className={styles.showMoreBtn} onClick={() => setLimit(limit + 20)}>
 					Show more
 				</button>

@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useQuery } from '@tanstack/react-query';
-import { getRecipePage } from '@/utils/fetching';
+import { getRecipePage } from '@/api/actions';
 import Header from '@/components/header';
 import Preloader from '@/icon/Preloader';
 import StarIcon from '@/icon/StarIcon';
@@ -64,19 +64,23 @@ export default function RecipePage() {
 										Cuisine: <span className={styles.purpleText}>{data.cuisine}</span>
 									</p>
 									<p>
-										Meal type: <span className={styles.purpleText}>{data.mealType}</span>
+										Meal type:{' '}
+										<span className={styles.purpleText}>{data.mealType?.join(' / ')}</span>
 									</p>
 
 									<p>
-										{data.tags?.map((tag, i) => (
-											<>
-												<span key={i} className={styles.hashtag}>
-													<Link href={`/recipes/tag/${tag}`}>{`#${tag
-														.replace(/\-/g, '')
-														.replace(/\s/g, '_')} `}</Link>
-												</span>
-											</>
-										))}
+										{data.tags?.map((tag, i) => {
+											const tagName = tag
+												.replace(/(\w)(\w*)/g, (g0, g1, g2) => g1.toUpperCase() + g2)
+												.replace(/\s/g, '');
+											return (
+												<>
+													<span key={i} className={styles.hashtag}>
+														<Link href={`/recipes/tag/${tag}`}>{`#${tagName} `}</Link>
+													</span>
+												</>
+											);
+										})}
 									</p>
 								</div>
 

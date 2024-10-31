@@ -12,7 +12,7 @@ export interface RecipesDto {
 	cuisine?: string;
 	caloriesPerServing?: number;
 	tags?: string[];
-	mealType?: string;
+	mealType?: string[];
 }
 
 export interface DataDto {

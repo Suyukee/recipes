@@ -1,5 +1,5 @@
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
-import { getRecipes } from '@/utils/fetching';
+import { getRecipes } from '@/api/actions';
 import MainPage from '@/components/main-page';
 
 export default async function Home() {
